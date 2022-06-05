@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learing/pages/home_page.dart';
+import 'package:flutter_learing/pages/login_page.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    int days = 30;
-    String name = "Mr.Reiaz";
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "30 Days Flutter learning with MrReiaz",
-          ),
-        ),
-        body: Center(
-          child: Container(
-            child: Text(
-              'Welcome to $days flutter learn with $name',
-            ),
-          ),
-        ),
-        drawer: Drawer(),
+      themeMode: ThemeMode.light,
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        //primarySwatch: Colors.green,
+      ),
+      initialRoute: "/login",
+      routes: {
+        "/": (context) => HomePage(),
+        "/login": (context) => LoginPage(),
+      },
     );
   }
 }
