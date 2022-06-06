@@ -9,7 +9,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String name = "";
   bool changeBtn = false;
   final _formKey = GlobalKey<FormState>();
 
@@ -18,12 +17,13 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         changeBtn = true;
       });
+
+      await Future.delayed(Duration(seconds: 1));
+      await Navigator.pushNamed(context, MyRoute.homeRoute);
+      setState(() {
+        changeBtn = false;
+      });
     }
-    await Future.delayed(Duration(seconds: 1));
-    await Navigator.pushNamed(context, MyRoute.homeRoute);
-    setState(() {
-      changeBtn = false;
-    });
   }
 
   @override
