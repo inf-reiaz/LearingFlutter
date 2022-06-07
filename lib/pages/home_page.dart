@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learing/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class HomePage extends StatelessWidget {
     String name = "Mr.Reiaz";
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "30 Days Flutter learning with MrReiaz",
         ),
       ),
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
